@@ -183,13 +183,6 @@ def create_relate_to_dataframe():
     return df
 
 
-# Function for when the user wants to know more information about a popular video
-def create_data(identification):
-    url_text = engine.execute(f"SELECT url FROM PopVideos where channel_title = {identification};")
-
-    return url_text
-
-
 def instructions():
     head = """
 
@@ -217,9 +210,9 @@ if __name__ == "__main__":
             print(create_popular_dataframe())
             question3 = input("Do you want to see more videos related to a specific video? (y/n): ")
             if question3 is 'y':
-                # id = input("Enter the id of the video: ")
-                # print(create_data(id))
                 print(create_relate_to_dataframe())
+                print("Go to the channels listed in the table to learn more about what makes their channels successful!")
+                print("Happy Content Creation!")
             else:
                 print(message)
         else:
