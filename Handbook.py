@@ -183,13 +183,6 @@ def create_relate_to_dataframe():
     return df
 
 
-# Function for when the user wants to know more information about a popular video
-def create_data(identification):
-    url_text = engine.execute(f"SELECT url FROM PopVideos where channel_title = {identification};")
-
-    return url_text
-
-
 def instructions():
     head = """
 
