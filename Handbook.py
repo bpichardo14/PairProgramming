@@ -4,7 +4,7 @@ import pandas as pd
 import sqlalchemy as db
 import validators
 
-api_key = "AIzaSyDUCymNrzRJbIi2wHCPECwSp3z51LkCVc4"
+api_key = "Your-API-Key"
 youtube = build('youtube', 'v3', developerKey=api_key)
 
 # creating the database
@@ -193,7 +193,7 @@ def create_data(identification):
 def instructions():
     head = """
 
-    ----------------------------------------------------------------------i--------------------------------------------------------------------
+    ------------------------------------------------------------------------------------------------------------------------------------------
 
                                                         📕 WELCOME TO THE CONTENT CREATOR HANDBOOK 📙
 
@@ -205,21 +205,24 @@ def instructions():
 
 
 if __name__ == "__main__":
+    instructions()
 
     question1 = input("Do you have an idea of what you want to look for? (y/n): ")
     message = "Sorry to see you go! Good bye. Like comment and subscribe ;) "
 
     if question1 is 'y':
         print(create_topic_dataframe())
+        print("Go to the channels listed in the table to learn more about what makes their channels successful!")
+        print("Happy Content Creation!")
     else:
         question2 = input("Do you want to see some popular videos? (y/n): ")
         if question2 is 'y':
             print(create_popular_dataframe())
             question3 = input("Do you want to see more videos related to a specific video? (y/n): ")
             if question3 is 'y':
-                # id = input("Enter the id of the video: ")
-                # print(create_data(id))
                 print(create_relate_to_dataframe())
+                print("Go to the channels listed in the table to learn more about what makes their channels successful!")
+                print("Happy Content Creation!")
             else:
                 print(message)
         else:

@@ -21,7 +21,7 @@ class HandBook(unittest.TestCase):
 
   def test_data_frame(self):
     df = Handbook.create_topic_dataframe()
-    self.assertEqual(type(df), pd.DataFrame) #this one might not work because you need user input, but we shall see
+    self.assertEqual(type(df), pd.DataFrame)
 
     df = Handbook.create_popular_dataframe()
     self.assertEqual(type(df), pd.DataFrame)
